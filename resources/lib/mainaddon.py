@@ -12,7 +12,7 @@ get_soup1("https://consortiumnews.libsyn.com/rss")
 
 def get_playable_podcast1(soup1):
     subjects = []
-    for content in soup1.find_all('item'):
+    for content in soup1.find_all('item' limit=9):
         try:        
             link = content.find('enclosure')
             link = link.get('url')
